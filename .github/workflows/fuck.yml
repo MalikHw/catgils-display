@@ -1,0 +1,54 @@
+name: Build and Release
+
+on:
+  push:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Set up JDK 17
+      uses: actions/setup-java@v3
+      with:
+        distribution: 'temurin'
+        java-version: '17'
+        
+    - name: Grant execute permission for gradlew
+      run: chmod +x gradlew
+      
+    - name: Generate Gradle Wrapper
+      run: gradle wrapper
+      
+    - name: Commit gradlew if changed
+      run: |
+        git config user.name "GitHub Actions"
+        git config user.email "actions@github.com"
+        git add gradle/ gradlew gradlew.bat
+        git diff --staged --quiet || git commit -m "Add Gradle wrapper"
+        git push || true
+        
+    - name: Build APK
+      run: ./gradlew assembleRelease
+      
+    - name: Build AAB
+      run: ./gradlew bundleRelease
+      
+    - name: Generate tag
+      id: tag
+      run: echo "TAG=v$(date +'%s')" >> $GITHUB_OUTPUT
+      
+    - name: Create Release
+      uses: softprops/action-gh-release@v1
+      with:
+        tag_name: ${{ steps.tag.outputs.TAG }}
+        name: Release ${{ steps.tag.outputs.TAG }}
+        files: |
+          app/build/outputs/apk/release/*.apk
+          app/build/outputs/bundle/release/*.aab
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
