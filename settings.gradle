@@ -7,10 +7,6 @@ pluginManagement {
     }
 }
 
-dependencyResolutionManagement {
-    // ts turns off the strict check completely
-    repositoriesMode.set(RepositoriesMode.OFF) 
-}
 
 rootProject.name = "Catgirls Display"
 include ':app'
