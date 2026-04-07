@@ -1,15 +1,13 @@
+dependencyResolutionManagement {
+    // ts turns off the strict check completely
+    repositoriesMode.set(RepositoriesMode.OFF) 
+}
+
 pluginManagement {
     repositories {
         google()
         mavenCentral()
         gradlePluginPortal()
-    }
-}
-dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
-    repositories {
-        google()
-        mavenCentral()
     }
 }
 
