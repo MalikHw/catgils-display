@@ -1,14 +1,15 @@
-dependencyResolutionManagement {
-    // ts turns off the strict check completely
-    repositoriesMode.set(RepositoriesMode.OFF) 
-}
-
+// fuck githb that wanted this to be the 1st
 pluginManagement {
     repositories {
         google()
         mavenCentral()
         gradlePluginPortal()
     }
+}
+
+dependencyResolutionManagement {
+    // ts turns off the strict check completely
+    repositoriesMode.set(RepositoriesMode.OFF) 
 }
 
 rootProject.name = "Catgirls Display"
