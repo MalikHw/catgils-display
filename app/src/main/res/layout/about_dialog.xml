@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:gravity="center">
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@mipmap/ic_launcher"
+        android:layout_marginBottom="16dp"
+        android:contentDescription="App icon" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Catgirls Display"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="8dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="By MalikHw47"
+        android:textSize="16sp"
+        android:layout_marginBottom="24dp" />
+
+    <TextView
+        android:id="@+id/btnYoutube"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="YouTube: @MalikHw47"
+        android:textColor="#FF0000"
+        android:textSize="16sp"
+        android:padding="12dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="?attr/selectableItemBackground" />
+
+    <TextView
+        android:id="@+id/btnGithub"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Source Code"
+        android:textColor="#4078c0"
+        android:textSize="16sp"
+        android:padding="12dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="?attr/selectableItemBackground" />
+
+    <TextView
+        android:id="@+id/btnTiktok"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TikTok: malikhw47"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        android:padding="12dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="?attr/selectableItemBackground" />
+
+    <TextView
+        android:id="@+id/btnDonate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Donate"
+        android:textColor="#00C853"
+        android:textSize="16sp"
+        android:padding="12dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="?attr/selectableItemBackground" />
+
+</LinearLayout>
